@@ -22,4 +22,4 @@ the vacation, you can also add the start and end alarms, share the vacation, and
     with vacation details, where you can further modify. NOTE: You cannot delete a vacation that has an excursion in it.
 
 This application APK is deployed on Android Version 8.0 Oreo
-https://gitlab.com/wgu-gitlab-environment/student-repos/adenni62/d308-mobile-application-development-android/-/tree/working?ref_type=heads
+https://gitlab.com/wgu-gitlab-environment/student-repos/adenni62/d424-software-engineering-capstone/-/tree/working?ref_type=heads
