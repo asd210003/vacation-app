@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -28,11 +29,13 @@ import com.example.vacationapp.entities.Vacation;
 import com.example.vacationapp.repository.VacationRepository;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.time.format.ResolverStyle;
 import java.util.ArrayList;
+import java.util.List;
 
 public class VacationDetail extends AppCompatActivity {
 
@@ -249,6 +252,19 @@ public class VacationDetail extends AppCompatActivity {
             });
         }
         finish();
+
+        List<Vacation> vacations = repository.getAllVacations();
+
+
+        // Log vacations to logcat
+        for (Vacation v : vacations) {
+            String log = String.format("%s | %s | %s | %s",
+                    LocalDateTime.now(),
+                    v.getTitle(),
+                    v.getHotel(),
+                    v.getStartDate());
+            Log.i("Report of Vacations", log);
+        }
     }
 
     private void deleteVacation() {

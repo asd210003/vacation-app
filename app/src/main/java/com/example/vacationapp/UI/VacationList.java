@@ -23,7 +23,7 @@ public class VacationList extends AppCompatActivity {
     private ListView vacationListView;
     private SearchView searchView;
     private ArrayAdapter<Vacation> adapter;
-    private List<Vacation> vacationList = new ArrayList<>(); // current data
+    private List<Vacation> vacationList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +34,6 @@ public class VacationList extends AppCompatActivity {
         vacationListView = findViewById(R.id.vacationListView);
         searchView = findViewById(R.id.searchView);
 
-        // Initialize adapter once with empty list
         adapter = new ArrayAdapter<>(
                 this,
                 android.R.layout.simple_list_item_1,
@@ -42,7 +41,6 @@ public class VacationList extends AppCompatActivity {
         );
         vacationListView.setAdapter(adapter);
 
-        // Click listener for list items
         vacationListView.setOnItemClickListener((parent, view, position, id) -> {
             Vacation selected = adapter.getItem(position);
             if (selected != null) {
@@ -52,7 +50,6 @@ public class VacationList extends AppCompatActivity {
             }
         });
 
-        // Search logic (only once)
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -78,7 +75,7 @@ public class VacationList extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        loadVacations(); // refresh data
+        loadVacations();
     }
 
     private void loadVacations() {
@@ -88,7 +85,7 @@ public class VacationList extends AppCompatActivity {
             runOnUiThread(() -> {
                 vacationList.clear();
                 vacationList.addAll(vacations);
-                adapter.notifyDataSetChanged(); // refresh list
+                adapter.notifyDataSetChanged();
             });
         });
     }
