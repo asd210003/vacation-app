@@ -39,8 +39,6 @@ public class ExcursionDetail extends AppCompatActivity {
     private static final DateTimeFormatter DATE_FMT =
             DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    private static final DateTimeFormatter STRICT_DATE =
-            DateTimeFormatter.ofPattern("uuuu-MM-dd").withResolverStyle(ResolverStyle.STRICT);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
