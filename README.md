@@ -1,4 +1,5 @@
 Application Title: Vacation App
+
 Application Purpose: This app is designed to allow users to create,  modify, and delete vacation plans. Within these vacation plans, the
 user can have excursions planned out as well. This app allows for as many vacations as the user desires, and will also allow the user 
 to have alerts and share their vacation plans.
